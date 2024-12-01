@@ -1,0 +1,23 @@
+<!-- sender.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Commands</title>
+</head>
+<body>
+    <h1>Send Commands to Receiver Website</h1>
+    <textarea id="command" placeholder="Enter command to execute..."></textarea>
+    <br>
+    <button onclick="sendCommand()">Send Command</button>
+
+    <script>
+        function sendCommand() {
+            const command = document.getElementById('command').value;
+            // Send the command to the other site using postMessage
+            window.open('https://receiver-website.github.io?command=' + encodeURIComponent(command), '_blank');
+        }
+    </script>
+</body>
+</html>
